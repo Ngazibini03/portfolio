@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section with My Image -->
+    <header>
+        <h1>Welcome to My Personal Website</h1>
+        <p>Discover my skills, projects, and how we can collaborate. I am Lindokuhle Ngazibini Nongwe.</p>
+        <nav style="position: fixed;">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            My name is Lindokuhle Ngazibini Nongwe, and I am a 24-year-old graduate with a Diploma in Information 
+            Technology from the Vaal University of Technology. Currently, I am participating in a graduate program 
+            at Capaciti, where I specialize in API development and backend technologies.
+            <br>
+            I am deeply passionate about programming and take pride in leveraging my skills to solve problems and create 
+            meaningful solutions. I find great fulfillment in helping others, whether through technical support or 
+            collaborative projects, without expecting anything in return.
+            <br>
+            I firmly believe that with passion and perseverance, anything is achievable. It's essential not to let 
+            challenges discourage you from reaching your goals. This mindset serves as a constant reminder for me to 
+            be the role model I wish I had during my journey.
+        </p>
+        <section id="cv-download">
+            <!-- The button wrapped inside an anchor tag -->
+            <a href="CV_202408210402328.pdf" download="Lindokuhle_Nongwe_CV" class="download-button">
+                <button>Download Resume</button>
+            </a>
+        </section>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-list">
+            <div>
+                <h3>HTML</h3>
+                
+            </div>
+            <div>
+                <h3>CSS</h3>
+
+            </div>
+            <div>
+                <h3>Java</h3>
+                
+            </div>
+            <div>
+                <h3>MySQL</h3>
+                
+            </div>
+            <div>
+                <h3>Python</h3>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>I am currently in the early stages of building my portfolio. 
+            While I may not have a collection of completed projects to showcase just yet, 
+            I am actively honing my skills and gaining hands-on experience. As I progress in my career, 
+            I will regularly update this section with new work and achievements.
+            <br>
+            <br>
+            In the meantime, you can explore some of my projects on my GitHub profile. Thank you for your support, 
+            and I look forward to sharing my growth with you!
+        </p>
+    </section>
+
+    <!-- Contact Section Added formspree to link my email address-->
+    <section id="contact">
+        <h2 style="color: #666;">Contact Me</h2>
+        <form id="contact-form" action="https://formspree.io/f/manyobzz" method="POST" onsubmit="return validateForm()">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="contact-number" placeholder="Contact Number (e.g., +27 63 820 1155)" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/lindokuhle-nongwe-6057a1230/" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Ngazibini03" target="_blank" class="social-icon">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Lindokuhle Ngazibini Nongwe. All rights reserved.</p>
+    </footer>
+
+    <!--To get the emial on my personal email when they click submit JS code-->
+    <script>
+        function validateForm() {
+            // Grab form elements
+            var email = document.querySelector("input[name='email']");
+            var name = document.querySelector("input[name='name']");
+            var contactNumber = document.querySelector("input[name='contact-number']");
+            var message = document.querySelector("textarea[name='message']");
+    
+            // Validate email
+            if (!email.value || !validateEmail(email.value)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+    
+            // Validate message
+            if (!message.value.trim()) {
+                alert("Please enter a message.");
+                return false;
+            }
+    
+            // Clear form fields after submission
+            setTimeout(() => {
+                email.value = "";
+                name.value = "";
+                contactNumber.value = "";
+                message.value = "";
+            }, 100); // Timeout to allow submission to complete
+    
+            return true;
+        }
+    
+        function validateEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
+    </script>
+    
+</body>
+
+</html>
