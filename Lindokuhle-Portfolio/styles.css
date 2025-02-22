@@ -160,6 +160,19 @@ section p {
     color: #666;
 }
 
+/* Styles for the images inside skills section */
+.skill-img {
+    width: 50px; /* You can adjust the size */
+    height: 50px; /* You can adjust the size */
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for the images */
+.skills-list div:hover .skill-img {
+    transform: scale(1.2); /* Slightly enlarge the image on hover */
+}
+
 /* Projects Section */
 #projects {
     background-color: #f9f9f9;
